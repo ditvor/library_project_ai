@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  library:
+    build: .
+    container_name: library-management-system
+    stdin_open: true  # Keep STDIN open even if not attached
+    tty: true         # Allocate a pseudo-TTY
+    volumes:
+      - ./data:/app/data  # Mount a volume for data persistence
+    restart: unless-stopped
